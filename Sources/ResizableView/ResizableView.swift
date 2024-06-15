@@ -19,6 +19,7 @@ public struct ResizableView<Content: View>: View {
     private let content: Content
     
     @State private var controlStickOpacity = 1.0
+    @State private var controlStickScale = 1.0
     
     public init(
         width: Binding<CGFloat>,
@@ -44,12 +45,14 @@ public struct ResizableView<Content: View>: View {
             if controlEdge == .left {
                 HStack {
                     HandleStickView
+                        .scaleEffect(controlStickScale)
                     Spacer()
                 }
             } else {
                 HStack {
                     Spacer()
                     HandleStickView
+                        .scaleEffect(controlStickScale)
                 }
             }
         }
@@ -79,7 +82,10 @@ public struct ResizableView<Content: View>: View {
     private var dragGesture: some Gesture {
         DragGesture()
             .onChanged { value in
-                controlStickOpacity = 0.0
+                withAnimation(.easeIn(duration: 0.1)) {
+                    controlStickOpacity = 0.1
+                    controlStickScale = 2.0
+                }
                 let translation = value.translation.width
                 let change = controlEdge == .left ? -translation : translation
                 let newWidth = resizingWidth + change
@@ -89,7 +95,10 @@ public struct ResizableView<Content: View>: View {
                 }
             }
             .onEnded { _ in
-                withAnimation(.easeIn(duration: 0.1)) { controlStickOpacity = 1.0 }
+                withAnimation(.easeIn(duration: 0.1)) { 
+                    controlStickOpacity = 1.0
+                    controlStickScale = 1.0
+                }
             }
     }
 }
