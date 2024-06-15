@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-// TODO: top, bottom edges implementation
-// TODO: Haptic feedbacks while resizing
-
 /// View that can be dynamically resize with Drag Gestures.
 @available(iOS 15.0, *)
 public struct ResizableView<Content: View>: View {
