@@ -106,30 +106,3 @@ extension ResizableView {
         }
     }
 }
-
-//#Preview {
-//    @Previewable @State var controlWidth: CGFloat = 150
-//    
-//    HStack {
-//        ResizableView(
-//            width: $controlWidth,
-//            maxWidth: 550,
-//            controlEdge: .left
-//        ) {
-//            VStack(alignment: .leading) {
-//                ForEach(0..<15) { value in
-//                    HStack {
-//                        Text("Value:")
-//                        Text(value.formatted())
-//                        
-//                    }
-//                    .frame(width: 300)
-//                    .clipShape(Capsule())
-//                    .background(.green)
-//                }
-//            }
-//            .padding(.top)
-//            .padding(.leading)
-//        }
-//    }
-//}
