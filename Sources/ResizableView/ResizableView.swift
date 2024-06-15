@@ -1,10 +1,3 @@
-//
-//  ResizableView.swift
-//  ALPLogo
-//
-//  Created by Alpay Calalli on 10.06.24.
-//
-
 import SwiftUI
 
 /// View that can be dynamically resize with Drag Gestures.
