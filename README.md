@@ -2,28 +2,29 @@ ResizableView
 
 ResizableView is a SwiftUI component that allows you to create a dynamically resizable view using drag gestures. This component is particularly useful when you need to provide users with the ability to adjust the width of a view by dragging a handle.
 
-Features
+## Features
 
 Supports dynamic resizing via drag gestures.
 Customizable minimum and maximum width.
 Adjustable control handle for resizing.
 Works with any SwiftUI content.
 Supports alignment of the control handle on either the left or right edge.
-Requirements
 
-iOS 15.0+
-Swift 5.5+
-Installation
+## Installation
 
-Swift Package Manager
-To add ResizableView to your project, you can use Swift Package Manager. In Xcode:
+#### Requirements
 
-Go to File > Add Packages...
+- iOS 15.0+
+
+#### Via Swift Package Manager
+
+Go to File > Add Package Dependencies...
 Enter https://github.com/alpaycli/ResizableView.git
 Select the version and add the package to your project.
-Usage
 
-Basic Usage
+## Usage
+
+### Basic Usage
 ```Swift
 import SwiftUI
 
@@ -45,21 +46,20 @@ struct ContentView: View {
 }
 ```
 
-Customization
+## Customization
 width: A binding to the width of the resizable view.
 maxWidth: The maximum width that the view can be resized to.
 controlEdge: The edge where the control handle is located (.left or .right).
 content: The content to be displayed inside the resizable view.
-Example
 
-License
+## License
 
 ResizableView is available under the MIT license. See the LICENSE file for more info.
 
-Contributions
+## Contributions
 
 Contributions are welcome! If you have any suggestions or improvements, please create an issue or submit a pull request.
 
-Acknowledgements
+## Acknowledgements
 
 This package is inspired by the need for flexible and user-friendly resizable views in SwiftUI applications.
