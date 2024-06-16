@@ -24,8 +24,7 @@ Select the version and add the package to your project.
 Usage
 
 Basic Usage
-swift
-Copy code
+```Swift
 import SwiftUI
 
 struct ContentView: View {
@@ -44,56 +43,15 @@ struct ContentView: View {
         .padding()
     }
 }
+```
+
 Customization
 width: A binding to the width of the resizable view.
 maxWidth: The maximum width that the view can be resized to.
 controlEdge: The edge where the control handle is located (.left or .right).
 content: The content to be displayed inside the resizable view.
 Example
-swift
-Copy code
-import SwiftUI
 
-@main
-struct MyApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
-API
-
-ResizableView
-swift
-Copy code
-@available(iOS 15.0, *)
-public struct ResizableView<Content: View>: View {
-    
-    public init(
-        width: Binding<CGFloat>,
-        maxWidth: CGFloat,
-        controlEdge: Edge,
-        @ViewBuilder content: () -> Content
-    )
-    
-    public var body: some View
-}
-Edge Enum
-swift
-Copy code
-extension ResizableView {
-    public enum Edge {
-        case left, right
-        
-        var alignment: Alignment {
-            switch self {
-            case .left: return .trailing
-            case .right: return .leading
-            }
-        }
-    }
-}
 License
 
 ResizableView is available under the MIT license. See the LICENSE file for more info.
