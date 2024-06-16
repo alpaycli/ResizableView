@@ -49,10 +49,10 @@ struct ContentView: View {
 ```
 
 ## Customization
-width: A binding to the width of the resizable view.
-maxWidth: The maximum width that the view can be resized to.
-controlEdge: The edge where the control handle is located (.left or .right).
-content: The content to be displayed inside the resizable view.
+- width: A binding to the width of the resizable view.
+- maxWidth: The maximum width that the view can be resized to.
+- controlEdge: The edge where the control handle is located (.left or .right).
+- content: The content to be displayed inside the resizable view.
 
 ## License
 
