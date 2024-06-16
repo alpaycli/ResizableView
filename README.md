@@ -36,14 +36,14 @@ struct ContentView: View {
     var body: some View {
         ResizableView(
             width: $width,
-            maxWidth: 400,
+            maxWidth: 300,
             controlEdge: .right
         ) {
             Text("Resizable Content")
                 .padding()
         }
-        .frame(height: 200)
-        .padding()
+        .frame(width: width, height: 200)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 ```
