@@ -38,14 +38,12 @@ public struct ResizableView<Content: View>: View {
             if controlEdge == .left {
                 HStack {
                     HandleStickView
-                        .scaleEffect(controlStickScale)
                     Spacer()
                 }
             } else {
                 HStack {
                     Spacer()
                     HandleStickView
-                        .scaleEffect(controlStickScale)
                 }
             }
         }
@@ -54,6 +52,7 @@ public struct ResizableView<Content: View>: View {
     
     private var ContentContainerView: some View {
         Rectangle()
+            .fill(.clear)
             .overlay(alignment: .topLeading) { content }
             .cornerRadius(10)
             .frame(minWidth: minWidth ?? resizingWidth)
@@ -69,6 +68,7 @@ public struct ResizableView<Content: View>: View {
             .frame(width: 8, height: 100)
             .cornerRadius(10)
             .gesture(dragGesture)
+            .scaleEffect(controlStickScale)
     }
     
     private var dragGesture: some Gesture {
