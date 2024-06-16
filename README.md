@@ -18,9 +18,11 @@ ResizableView is a SwiftUI component that allows you to create a dynamically res
 
 #### Via Swift Package Manager
 
+*
 Go to File > Add Package Dependencies...
 Enter https://github.com/alpaycli/ResizableView.git
 Select the version and add the package to your project.
+*
 
 ## Usage
 
