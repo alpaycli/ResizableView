@@ -19,7 +19,7 @@ Swift Package Manager
 To add ResizableView to your project, you can use Swift Package Manager. In Xcode:
 
 Go to File > Add Packages...
-Enter the repository URL for this package.
+Enter https://github.com/alpaycli/ResizableView.git
 Select the version and add the package to your project.
 Usage
 
