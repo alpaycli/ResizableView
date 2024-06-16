@@ -2,6 +2,8 @@ ResizableView
 
 ResizableView is a SwiftUI component that allows you to create a dynamically resizable view using drag gestures. This component is particularly useful when you need to provide users with the ability to adjust the width of a view by dragging a handle.
 
+![](ResizableViewVideo-ezgif.com-video-to-gif-converter)
+
 ## Features
 
 - Supports dynamic resizing via drag gestures.
