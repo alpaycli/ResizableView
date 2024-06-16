@@ -54,7 +54,6 @@ public struct ResizableView<Content: View>: View {
     
     private var ContentContainerView: some View {
         Rectangle()
-            .fill(.thinMaterial)
             .overlay(alignment: .topLeading) { content }
             .cornerRadius(10)
             .frame(minWidth: minWidth ?? resizingWidth)
