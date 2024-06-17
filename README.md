@@ -8,8 +8,6 @@ ResizableView is a SwiftUI component that allows you to create a dynamically res
 
 - Supports dynamic resizing via drag gestures.
 - Customizable minimum and maximum width.
-- Adjustable control handle for resizing.
-- Works with any SwiftUI content.
 - Supports alignment of the control handle on either the left or right edge.
 
 ## Installation
@@ -52,6 +50,7 @@ struct ContentView: View {
 - width: A binding to the width of the resizable view.
 - maxWidth: The maximum width that the view can be resized to.
 - controlEdge: The edge where the control handle is located (.left or .right).
+- contentAlignment: Alignment of the content in its container.
 - content: The content to be displayed inside the resizable view.
 
 ## License
