@@ -9,6 +9,7 @@ public struct ResizableView<Content: View>: View {
     @State private var minWidth: CGFloat?
     private let maxWidth: CGFloat
     private let controlEdge: Edge
+    private var contentAlignment: Alignment
     private let content: Content
     
     @State private var controlStickOpacity = 1.0
@@ -18,11 +19,13 @@ public struct ResizableView<Content: View>: View {
         width: Binding<CGFloat>,
         maxWidth: CGFloat,
         controlEdge: Edge,
+        contentAlignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) {
         self._resizingWidth = width
         self.maxWidth = maxWidth
         self.controlEdge = controlEdge
+        self.contentAlignment = contentAlignment
         self.content = content()
     }
     
@@ -47,13 +50,12 @@ public struct ResizableView<Content: View>: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, alignment: controlEdge.alignment)
     }
     
     private var ContentContainerView: some View {
         Rectangle()
             .fill(.clear)
-            .overlay(alignment: .topLeading) { content }
+            .overlay(alignment: contentAlignment) { content }
             .cornerRadius(10)
             .frame(minWidth: minWidth ?? resizingWidth)
             .frame(maxWidth: maxWidth)
@@ -106,4 +108,22 @@ extension ResizableView {
             }
         }
     }
+}
+
+@available(iOS 18.0, *)
+#Preview {
+    @Previewable @State var width: CGFloat = 150
+    
+    ResizableView(
+        width: $width,
+        maxWidth: 300,
+        controlEdge: .right,
+        contentAlignment: .center
+    ) {
+        Text("Resizable Content")
+            .padding()
+            .background(.gray)
+    }
+    .frame(width: width, height: 200)
+    .frame(maxWidth: .infinity, alignment: .leading)
 }
